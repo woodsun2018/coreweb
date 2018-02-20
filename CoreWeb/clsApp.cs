@@ -9,7 +9,7 @@ namespace CoreWeb
         public readonly string ProductType = "CoreWeb";
 
         //软件版本
-        public readonly string SoftVersion = "1.00.05";
+        public readonly string SoftVersion = "1.00.06";
 
         //开始运行时间
         public DateTime StartTime { get; private set; }

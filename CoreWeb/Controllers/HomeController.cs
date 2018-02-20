@@ -22,6 +22,8 @@ namespace CoreWeb.Controllers
 
         public IActionResult Index()
         {
+            _logger.LogDebug($"{DateTime.Now}, Get work infomation");
+            
             //获取服务器环境信息
             Dictionary<string, string> model = HttpContext.GetWebInfo();
 
@@ -29,8 +31,6 @@ namespace CoreWeb.Controllers
             model["BasicInfo"] = MyBasicInfo();
             model["RunTimeInfo"] = MyRunTimeInfo();
             model["ProcessInfo"] = GetProcessInfo();
-
-            _logger.LogDebug($"{DateTime.Now}, Get work infomation");
 
             return View(model);
         }
