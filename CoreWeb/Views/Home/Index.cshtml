@@ -1,0 +1,46 @@
+﻿@using System.Collections.Generic
+@model Dictionary<string, string>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <table class="table table-bordered">
+            <thead>
+                <tr class="info">
+                    <th>
+                        Item
+                    </th>
+                    <th>
+                        Value
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @if (item.Value.StartsWith("="))
+                        {
+                            <th colspan="2" class="info">
+                                @Html.DisplayFor(modelItem => item.Key)
+                            </th>
+                        }
+                        else
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Key)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Value)
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
